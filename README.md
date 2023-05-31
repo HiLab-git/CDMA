@@ -1,8 +1,16 @@
 # CDMA
-offical code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept.
+offical code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept [arxiv](https://arxiv.org/abs/2305.18830).
 
 ### usage
-Just use the ```run.sh``` script to run the code.
+First, split the dataset and crop WSIs into patches.
+```
+python utils.move_file.py
+python slide_window.py
+```
+
+Then, just use the ```run.sh``` script to run the code.
 ```
 sh run.sh
 ```
+### Acknowledgement
+The code of semi-supervise learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)

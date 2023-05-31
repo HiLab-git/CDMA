@@ -12,3 +12,5 @@ Then, just use the ```run.sh``` script to run the code.
 ```
 sh run.sh
 ```
+### Acknowledgement
+The code of semi-supervise learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)

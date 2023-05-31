@@ -18,7 +18,7 @@ from .arch_resnet import resnet
 from .arch_resnest import resnest
 from .abc_modules import ABC_Model
 
-from .deeplab_utils import ASPP, Decoder, CBAM, Decoder_DCN, SpatialAttention, ChannelAttention, Decoder_Attention
+from .deeplab_utils import ASPP, Decoder, CBAM, SpatialAttention, ChannelAttention, Decoder_Attention
 from .aff_utils import PathIndex
 from .puzzle_utils import tile_features, merge_features
 
@@ -28,20 +28,6 @@ from tools.ai.torch_utils import resize_for_tensors
 #######################################################################
 from .sync_batchnorm.batchnorm import SynchronizedBatchNorm2d
 
-def PCM(f, output_soft):
-    h, w = 32, 32
-    n, c, _, _ = output_soft.size()
-    f = F.interpolate(f, (h,w), mode='bilinear', align_corners=True)
-    output_soft = F.interpolate(output_soft, (h,w), mode='bilinear', align_corners=True)
-    output_soft = output_soft.view(n,-1,h*w)
-    f = f.view(n,-1,h*w)
-    f = f/(torch.norm(f,dim=1,keepdim=True)+1e-5)
-    aff = F.relu(torch.matmul(f.transpose(1,2), f),inplace=True)
-    aff = aff/(torch.sum(aff,dim=1,keepdim=True)+1e-5)
-    tmp1 = torch.matmul(output_soft[:,0].unsqueeze(1), aff).view(n,-1,h,w)
-    tmp2 = torch.matmul(output_soft[:,1].unsqueeze(1), aff).view(n,-1,h,w)
-    tmp = torch.cat([tmp1,tmp2],dim=1)
-    return F.interpolate(tmp, (256,256), mode='bilinear', align_corners=True)
 
 class FixedBatchNorm(nn.BatchNorm2d):
     def forward(self, x):

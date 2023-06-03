@@ -33,7 +33,7 @@ def get_arguments():
     parser.add_argument("--num_class", type=int,
                         default=2, help="Train class num")
     parser.add_argument("--input_size", default=256)
-    parser.add_argument("--lr", type=float, default=2e-3)
+    parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--weight_decay", type=float, default=5e-4)
     parser.add_argument("--gpu", nargs="+", type=int)
     parser.add_argument("--save_folder", default="model")

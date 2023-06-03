@@ -3,6 +3,10 @@ offical code for: Semi-supervised Pathological Image Segmentation via Cross Dist
 
 ### Overall Framework
 ![overall](https://github.com/HiLab-git/CDMA/tree/main/pics/overall.png)
+<div align="center">
+  <img src="https://github.com/HiLab-git/CDMA/tree/main/pics/overall.png">
+</div>
+
 
 ### usage
 First, split the dataset and crop WSIs into patches.

@@ -1,6 +1,9 @@
 # CDMA
 offical code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept [arxiv](https://arxiv.org/abs/2305.18830).
 
+### Overall Framework
+![image text](https://github.com/HiLab-git/CDMA/tree/main/pics/overall.png)
+
 ### usage
 First, split the dataset and crop WSIs into patches.
 ```

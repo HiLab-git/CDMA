@@ -19,6 +19,17 @@ sh run.sh
 
 ### Data Acquisition
 The DigestPath dataset can be downloaded in: [DigestPath](https://digestpath2019.grand-challenge.org/)
+The dataset dir is like this:
+```
+digestpath2019
+-----tissue-train-100
+-----tissue-train-5-patch
+-----tissue-train-100
+-----tissue-train-5-patch
+-----tissue-val
+-----tissue-val-patch
+-----tissue-test
+```
 
 ### Acknowledgement
 The code of semi-supervise learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)

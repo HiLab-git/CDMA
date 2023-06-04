@@ -19,7 +19,8 @@ sh run.sh
 
 ### Data Acquisition
 The DigestPath dataset can be downloaded in: [DigestPath](https://digestpath2019.grand-challenge.org/)
-The dataset dir is like this:
+
+The dataset dir is like this after splitting and cropping:
 ```
 digestpath2019
 -----tissue-train-100

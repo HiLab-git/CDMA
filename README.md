@@ -24,8 +24,8 @@ The dataset dir is like this after splitting and cropping:
 ```
 digestpath2019
 -----tissue-train-100
------tissue-train-5-patch
------tissue-train-100
+-----tissue-train-100-patch
+-----tissue-train-5
 -----tissue-train-5-patch
 -----tissue-val
 -----tissue-val-patch

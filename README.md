@@ -6,7 +6,7 @@ There are three branches based on different attention mechanisms and two losses 
 ![overall](https://github.com/HiLab-git/CDMA/blob/main/pics/overall.png)
 
 ### usage
-First, split the dataset and crop WSIs into patches.
+First, split the dataset into train, val and test sets, then crop WSIs into patches for computational feasibility.
 ```
 python utils.move_file.py
 python slide_window.py

@@ -147,8 +147,7 @@ class DiceMetric:
         ), 'class_dice': train_cls_dice, 'std_dice': train_std_dice}
 
         if verbose:
-            print("%.2f" % train_cls_dice[0], "%.2f" % train_cls_dice[1],
-                  "%.2f" % train_cls_dice[2], "%.2f" % train_cls_dice.mean())
+            print("%.2f" % train_cls_dice.mean())
         else:
             print("%.2f" % train_cls_dice.mean())
         return train_cls_dice.mean()

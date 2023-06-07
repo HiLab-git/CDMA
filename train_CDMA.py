@@ -259,7 +259,7 @@ if __name__ == '__main__':
     torch.cuda.set_device(args.gpu[0])
     # get model
     model, optimizer = get_deeplab(args)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[max_epoch//4,max_epoch//2,max_epoch*3//4], gamma=0.5)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[max_epoch//4,max_epoch//2,max_epoch*3//4])
 
     labeled_names = []
     unlabeled_names = []

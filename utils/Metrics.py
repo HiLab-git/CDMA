@@ -139,7 +139,7 @@ class DiceMetric:
 
     def compute_dice(self, verbose=False):
         train_dice_list = np.asarray(self.train_dice_list)*100
-        # print(train_dice_list)
+        train_dice_list = train_dice_list[1:]
         train_cls_dice = train_dice_list.mean(axis=0)
         train_avg_dice = train_dice_list.mean(axis=1)
         train_std_dice = train_avg_dice.std()
@@ -147,11 +147,8 @@ class DiceMetric:
         ), 'class_dice': train_cls_dice, 'std_dice': train_std_dice}
 
         if verbose:
-            # print("avg dice: {0:.2f},{1:.2f},{2:.2f},{3:.2f}".format(train_cls_dice[0],train_cls_dice[1],train_cls_dice[2],train_avg_dice.mean()))
             print("%.2f" % train_cls_dice[0], "%.2f" % train_cls_dice[1],
                   "%.2f" % train_cls_dice[2], "%.2f" % train_cls_dice.mean())
-            # print("%.2f" % train_dice_list[:, 0].std(), "%.2f" % train_dice_list[:, 1].std(
-            # ), "%.2f" % train_dice_list[:, 2].std(), "%.2f" % train_dice_list.std(0).mean())
         else:
             print("%.2f" % train_cls_dice.mean())
         return train_cls_dice.mean()

@@ -33,4 +33,4 @@ digestpath2019
 ```
 
 ### Acknowledgement
-The code of semi-supervise learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)
+The code of semi-supervised learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)

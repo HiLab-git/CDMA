@@ -32,5 +32,16 @@ digestpath2019
 -----tissue-test
 ```
 
+### Citation
+```
+@article{zhong2023semi,
+  title={Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions},
+  author={Zhong, Lanfeng and Liao, Xin and Zhang, Shaoting and Wang, Guotai},
+  journal={arXiv preprint arXiv:2305.18830},
+  year={2023}
+}
+```
+
 ### Acknowledgement
 The code of semi-supervised learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)
+

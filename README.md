@@ -32,6 +32,7 @@ digestpath2019
 -----tissue-test
 ```
 
+You can get data lists in ```data/digestpath```
 ### Citation
 ```
 @article{zhong2023semi,

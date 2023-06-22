@@ -1,5 +1,5 @@
 # CDMA
-offical code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept [arxiv](https://arxiv.org/abs/2305.18830).
+official code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept [arxiv](https://arxiv.org/abs/2305.18830).
 
 ### Overall Framework
 There are three branches based on different attention mechanisms and two losses in our framework
@@ -32,5 +32,16 @@ digestpath2019
 -----tissue-test
 ```
 
+### Citation
+```
+@article{zhong2023semi,
+  title={Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions},
+  author={Zhong, Lanfeng and Liao, Xin and Zhang, Shaoting and Wang, Guotai},
+  journal={arXiv preprint arXiv:2305.18830},
+  year={2023}
+}
+```
+
 ### Acknowledgement
-The code of semi-supervise learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)
+The code of semi-supervised learning framework is borrowed from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS)
+

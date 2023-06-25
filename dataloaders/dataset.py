@@ -30,15 +30,8 @@ from monai.transforms import (
     RandRotate90d,
     Resized,
     ScaleIntensityd,
-    RandAxisFlipd,
-    RandZoomd,
-    RandGaussianNoised,
-    RandAdjustContrastd,
-    RandGaussianSmoothd,
-    RandGaussianBlur,
-    RandHistogramShiftd,    
+    RandAxisFlipd,  
     EnsureTyped,
-    EnsureType,
 )
 from monai.transforms.intensity.dictionary import BrightnessContrastd
 
@@ -60,10 +53,6 @@ def get_train_loader(args, train_files, labeled_idxs, unlabeled_idxs):
                 args.input_size, args.input_size)),
             RandAxisFlipd(keys=["img", "label"], prob=0.5),
             RandRotate90d(keys=["img", "label"], prob=0.5, spatial_axes=[0, 1]),
-            RandGaussianNoised(keys=['img'], prob=0.25, mean=0, std=0.1),
-            RandAdjustContrastd(keys=["img"], prob=0.5, gamma=(1, 2)),
-            RandGaussianSmoothd(keys=["img"], prob=0.25, sigma_x=(1, 2)), 
-            RandZoomd(keys=["img", "label"], prob=0.5, min_zoom=0.8, max_zoom=1.5, mode=['area', 'nearest']),
             EnsureTyped(keys=["img", "label"]),
         ]
     )

@@ -19,21 +19,17 @@ from monai.data import decollate_batch, PILReader
 import logging
 import csv
 from monai.transforms import (
-    Activations,
     AsChannelFirstd,
     AddChanneld,
-    AsDiscrete,
     Compose,
     LoadImaged,
-    SpatialPadd,
-    RandSpatialCropd,
     RandRotate90d,
     Resized,
     ScaleIntensityd,
-    RandAxisFlipd,  
+    RandAxisFlipd,
+    RandGaussianNoised,
     EnsureTyped,
 )
-from monai.transforms.intensity.dictionary import BrightnessContrastd
 
 
 def get_train_loader(args, train_files, labeled_idxs, unlabeled_idxs):
@@ -42,17 +38,16 @@ def get_train_loader(args, train_files, labeled_idxs, unlabeled_idxs):
             # image three channels (H, W, 3); label: (H, W)
             LoadImaged(keys=["img", "label"],
                        reader=PILReader, dtype=np.uint8),
-            # BrightnessContrastd(keys=["img"], allow_missing_keys=True),
             # label: (1, H, W)
             AddChanneld(keys=["label"], allow_missing_keys=True),
             AsChannelFirstd(keys=['img'], channel_dim=-1,
                             allow_missing_keys=True),  # image: (3, H, W)
             # Do not scale label
             ScaleIntensityd(keys=["img"], allow_missing_keys=True),
-            Resized(keys=["img", "label"], spatial_size=(
-                args.input_size, args.input_size)),
+            Resized(keys=["img", "label"], spatial_size=(args.input_size, args.input_size)),
             RandAxisFlipd(keys=["img", "label"], prob=0.5),
             RandRotate90d(keys=["img", "label"], prob=0.5, spatial_axes=[0, 1]),
+            RandGaussianNoised(keys=["img", "label"], prob=0.25,),
             EnsureTyped(keys=["img", "label"]),
         ]
     )

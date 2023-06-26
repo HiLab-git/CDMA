@@ -47,7 +47,7 @@ def get_train_loader(args, train_files, labeled_idxs, unlabeled_idxs):
             Resized(keys=["img", "label"], spatial_size=(args.input_size, args.input_size)),
             RandAxisFlipd(keys=["img", "label"], prob=0.5),
             RandRotate90d(keys=["img", "label"], prob=0.5, spatial_axes=[0, 1]),
-            RandGaussianNoised(keys=["img", "label"], prob=0.25,),
+            RandGaussianNoised(keys=["img", "label"], prob=0.25),
             EnsureTyped(keys=["img", "label"]),
         ]
     )

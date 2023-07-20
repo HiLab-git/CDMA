@@ -35,7 +35,7 @@ from monai.transforms import (
 def get_train_loader(args, train_files, labeled_idxs, unlabeled_idxs):
     train_transforms = Compose(
         [
-            # image three channels (H, W, 3); label: (H, W)
+            # image three channels (H, W, 3) (RGB image); label: (H, W)
             LoadImaged(keys=["img", "label"],
                        reader=PILReader, dtype=np.uint8),
             # label: (1, H, W)

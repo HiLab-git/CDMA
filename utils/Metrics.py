@@ -134,7 +134,7 @@ class DiceMetric:
             labels_prob = get_soft_label(labels_prob, self.num_classes)
             soft_out, labels_prob = reshape_prediction_and_ground_truth(
                 soft_out, labels_prob)
-            dice_list = get_classwise_dice(soft_out, labels_prob)
+            dice_list = get_classwise_dice(soft_out.cpu(), labels_prob)
             self.train_dice_list.append(dice_list.cpu().numpy())
 
     def compute_dice(self, verbose=False):

@@ -117,8 +117,8 @@ def dice(input, target, ignore_index=None):
 
 
 class DiceMetric:
-    def __init__(self, num_classes):
-        self.num_classes = num_classes
+    def __init__(self, num_class):
+        self.num_classes = num_class
         self.train_dice_list = []
 
     def add_batch(self, pred, gt):

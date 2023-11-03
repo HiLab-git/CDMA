@@ -1,5 +1,5 @@
 # CDMA
-official code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, provisional accept [arxiv](https://arxiv.org/abs/2305.18830).
+official code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, early accept [arxiv](https://arxiv.org/abs/2305.18830).
 
 ### Overall Framework
 There are three branches based on different attention mechanisms and two losses in our framework

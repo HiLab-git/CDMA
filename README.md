@@ -35,11 +35,13 @@ digestpath2019
 You can get data lists in ```data/digestpath```
 ### Citation
 ```
-@article{zhong2023semi,
+@inproceedings{zhong2023semi,
   title={Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions},
   author={Zhong, Lanfeng and Liao, Xin and Zhang, Shaoting and Wang, Guotai},
-  journal={arXiv preprint arXiv:2305.18830},
-  year={2023}
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={570--579},
+  year={2023},
+  organization={Springer}
 }
 ```
 

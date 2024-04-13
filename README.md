@@ -1,5 +1,6 @@
 # CDMA
 official code for: Semi-supervised Pathological Image Segmentation via Cross Distillation of Multiple Attentions. MICCAI 2023, early accept [arxiv](https://arxiv.org/abs/2305.18830).
+And the extension is published on the [Pattern Recognition](https://www.sciencedirect.com/science/article/pii/S0031320324002437) 2024.
 
 ### Overall Framework
 There are three branches based on different attention mechanisms and two losses in our framework
@@ -42,6 +43,15 @@ You can get data lists in ```data/digestpath```
   pages={570--579},
   year={2023},
   organization={Springer}
+}
+
+@article{zhong2024semi,
+  title={Semi-supervised pathological image segmentation via cross distillation of multiple attentions and Seg-CAM consistency},
+  author={Zhong, Lanfeng and Luo, Xiangde and Liao, Xin and Zhang, Shaoting and Wang, Guotai},
+  journal={Pattern Recognition},
+  pages={110492},
+  year={2024},
+  publisher={Elsevier}
 }
 ```
 

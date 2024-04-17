@@ -73,16 +73,6 @@ def get_deeplab(args, ema=False):
                 param.detach_()
     return model, optimizer
 
-def get_files(data_root):
-    new_file = []
-    img_names = os.listdir(data_root+'images')
-    for img_name in img_names:
-        image_root = data_root+'images/'+img_name
-        label_root = data_root+'labels/'+img_name[:-4]+'_mask.png'
-        new_sample = {'img':image_root, 'label':label_root}
-        new_file.append(new_sample)
-    return new_file
-
 def train(model, train_loader, optimizer, iter_num, epoch):
     model.train()
     kd_loss = KDLoss(T=10)

@@ -354,11 +354,9 @@ if __name__ == '__main__':
     l.info(f'labeled:{labeled_num},unlabeled:{all_data_num-labeled_num}')
     print(f'labeled:{labeled_num},unlabeled:{all_data_num-labeled_num}')
 
-    val_pos, val_neg = get_files_redistribution(val_data_root)
-    val_files = val_pos
+    val_files = get_files(val_data_root)
 
-    test_pos, test_neg = get_files_redistribution(test_data_root)
-    test_files = test_pos + test_neg
+    test_files = get_files(test_data_root)
     
     l.info(f'training files:{all_data_num}, valid files:{len(val_files)}')
     print(f'training files:{all_data_num}, valid files:{len(val_files)}')

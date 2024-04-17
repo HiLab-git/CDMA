@@ -14,8 +14,7 @@ from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import monai
 import torch.optim as optim
-from dataloaders.dataset import get_train_loader, get_val_loader
-from train_baseline import get_files_redistribution, get_val_WSI_loader
+from dataloaders.dataset import get_train_loader, get_val_loader, get_val_WSI_loader
 from monai.data import decollate_batch, PILReader
 from monai.inferers import sliding_window_inference
 from utils.Metrics import DiceMetric
